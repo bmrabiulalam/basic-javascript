@@ -7,7 +7,7 @@ function kilometerToMeter(kilometer) {
         meter = kilometer * 1000; // 1 kilometer = 1000 meter
         return meter;
     } else {
-        return "INPUT ERROR: Invalid input type! Input any number that is greater than 0.";
+        return "INPUT ERROR: Invalid Input Type! Input any number that is greater than 0.";
     }
 }
 // console.log(kilometerToMeter(11.55));
@@ -37,7 +37,7 @@ function budgetCalculator(amountOfWatch, amountOfPhone, amountOfLaptop) {
         return totalBudgetAmount;
     }
     else {
-        return "INPUT ERROR: Invalid input type! Input any positive integer number.";
+        return "INPUT ERROR: Invalid Input type! Input any positive integer number.";
     }
 }
 // console.log(budgetCalculator(4, 2, 1));
@@ -64,7 +64,7 @@ function hotelCost(livingDays) {
         }
         return totalCost;
     } else {
-        return "INPUT ERROR: Invalid input type! Input any integer number of days that is greater than 0.";
+        return "INPUT ERROR: Invalid Input Type! Input any integer number of days that is greater than 0.";
     }
 }
 // console.log(hotelCost(7));
@@ -74,25 +74,30 @@ function megaFriend(friendNames) {
     // friendNames parameter would be an array of strings
     let megaFriendName = "";
     if (Array.isArray(friendNames)) { // check if the input is an array
-        for (let i = 0; i < friendNames.length; i++) {
-            // Take the i'th string of the array to compare the length with "megaFriendName" variable
-            let friendName = friendNames[i];
-            if (typeof friendName === 'string' || friendName instanceof String){
-                // Compare the length of "friendName" with "megaFriendName" variable
-                // to find the longest string and storing it to "megaFriendName"
-                if (friendName.length > megaFriendName.length) {
-                    megaFriendName = friendName;
+        if(friendNames.length > 0){
+            for (let i = 0; i < friendNames.length; i++) {
+                // Take the i'th string of the array to compare the length with "megaFriendName" variable
+                let friendName = friendNames[i];
+                if (typeof friendName === 'string' || friendName instanceof String){
+                    // Compare the length of "friendName" with "megaFriendName" variable
+                    // to find the longest string and storing it to "megaFriendName"
+                    if (friendName.length > megaFriendName.length) {
+                        megaFriendName = friendName;
+                    }
                 }
+                else{
+                    return "INPUT ERROR: Invalid Array Elements! All elements in the input array should be string.";
+                }          
             }
-            else{
-                return "INPUT ERROR: Invalid array elements! All elements in the input array should be string.";
-            }          
+            return megaFriendName;
         }
-        return megaFriendName;
+        else{
+            return "INPUT ERROR: Empty Array! ";
+        }
     }
     else {
-        return "INPUT ERROR: Invalid input type! Input should be an array of strings.";
+        return "INPUT ERROR: Invalid Input Type! Input should be an array of strings.";
     }
 }
 // let names = ["John", "Doe", "Smith", "Donald", "Hysenberg"];
-// console.log(megaFriend(names));
+// console.log(megaFriend([]));
