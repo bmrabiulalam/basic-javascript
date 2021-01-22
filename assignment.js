@@ -1,4 +1,4 @@
-// Put GH Link Here
+// https://github.com/bmrabiulalam/phero-b3-milestone3-assignment
 
 // Assignment 1
 function kilometerToMeter(kilometer) {
